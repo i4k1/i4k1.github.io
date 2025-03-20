@@ -1,4 +1,4 @@
-    let currentIndex = 0;
+let currentIndex = 0;
 
 function moveSlide(index) {
     const cards = document.querySelectorAll('.card');
