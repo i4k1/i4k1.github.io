@@ -33,7 +33,6 @@ img {
     font-size: 3.125em;
     text-align: center;
     color: #393A5B;
-    background-color: #FFF8F3;
 }
 
 
@@ -94,6 +93,79 @@ img {
 .novosti button:hover {
     background-color: #504D78;
 }
+
+/*.partners {*/
+/*    background-color: #FFFFFF;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*    overflow: hidden;*/
+/*}*/
+
+.partners h2 {
+    font-size: 3.125em;
+    text-align: center;
+    color: #393A5B;
+}
+
+.partners {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background: #f8f8f8;
+    padding: 20px 0;
+}
+
+/* Общая обертка */
+.slider-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Лента с логотипами */
+.sliderp {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    white-space: nowrap;
+    width: max-content;
+}
+
+/* Анимация движения */
+@keyframes infiniteScrollRight {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-33.33%);
+    }
+}
+
+@keyframes infiniteScrollLeft {
+    from {
+        transform: translateX(-33.33%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+/* Добавляем бесконечное движение */
+.top {
+    animation: infiniteScrollRight 20s linear infinite;
+}
+
+.bottom {
+    animation: infiniteScrollLeft 20s linear infinite;
+}
+
+/* Стиль для логотипов */
+.sliderp img {
+    max-width: 150px;
+    height: auto;
+}
+
 
 
 .main .content {
