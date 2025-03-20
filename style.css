@@ -166,7 +166,117 @@ img {
     height: auto;
 }
 
+.price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 6.125em;
+}
 
+
+.price h3 {
+    font-size: 3em;
+    line-height: 98%;
+    color: #302E4F;
+    margin-bottom: 1em;
+}
+
+.price p {
+    font-size: 1.3125em;
+    line-height: 161.9%;
+    color: #999597;
+    margin-bottom: 1.5625em;
+    text-align: center;
+}
+
+.price .card {
+    display: flex;
+    flex-direction: row;
+    padding: 39px 152px;
+    gap: 50px;
+    background-color: #CEC1DE;
+}
+
+.price .card img {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+}
+
+.price .card .text {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.875em;
+}
+
+#tarif {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5625em;
+}
+
+#tarif button {
+    border: none;
+    background-color: #FFFFFF;
+    border-radius: 0.625em;
+    color: #424242;
+    padding: 1.5em 3.375em;
+}
+
+#tarif button:hover {
+    background-color: #f54242;
+    color: white;
+}
+#tarif button.active {
+    background-color: #EE1919;
+    color: white;
+}
+
+.price .card .text button {
+    background-color: #EE1919;
+    color: white;
+    padding: 0.625em 1.25em;
+    border: none;
+    border-radius: 0.75em;
+    cursor: pointer;
+}
+
+.price .card .text button:hover {
+    background-color: #f54242;
+}
+
+.price .card .text input {
+    border: #787878 solid 1px;
+    background-color: transparent;
+    padding: 0.625em;
+}
+
+#inp {
+    display: flex;
+    gap: 0.625em;
+}
+
+#socs {
+    display: flex;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+}
+
+.price .card .text .socsety {
+    display: flex;
+    gap: 1.125em;
+}
+
+.price .card .text .socsety input {
+    margin: 0;
+}
+
+.price .card .text .socsety p {
+    margin: 0;
+    color: #565656;
+}
 
 .main .content {
     max-width: 100em;

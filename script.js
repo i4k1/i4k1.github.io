@@ -1,4 +1,4 @@
-let currentIndex = 0;
+    let currentIndex = 0;
 
 function moveSlide(index) {
     const cards = document.querySelectorAll('.card');
@@ -30,6 +30,16 @@ function updateDots() {
         }
     });
 }
+
+function toggleButton(activeId, inactiveId) {
+    const activeBtn = document.getElementById(activeId);
+    const inactiveBtn = document.getElementById(inactiveId);
+
+    activeBtn.classList.add("active");
+
+    inactiveBtn.classList.remove("active");
+}
+
 
 // Инициализация точек
 updateDots();
