@@ -29,7 +29,7 @@ img {
 
 }
 
-#novosti {
+#novosti, #projects {
     font-size: 3.125em;
     text-align: center;
     color: #393A5B;
@@ -195,6 +195,7 @@ img {
     padding: 39px 152px;
     gap: 50px;
     background-color: #CEC1DE;
+    border: 1px solid black;
 }
 
 .price .card img {
@@ -353,6 +354,7 @@ footer div.column li {
     transition: transform 0.5s ease;
 }
 
+
 .card {
     min-width: 350px;
     margin: 0 5px;
@@ -390,3 +392,48 @@ footer div.column li {
     background-color: yellow;
 }
 
+.actual-projects {
+    margin: auto;
+    margin-top: 4em;
+    display:flex;
+    flex-wrap:wrap;
+    /* max-width: 95em; */
+    align-items: center;
+    justify-content: center;
+}
+
+.actual-projects .card {
+    /* height:30em; */
+    /* background-color:#cda; */
+    width:calc( ( 100% - 350px ) / 3 );
+    /* margin:0 0 20px; */
+    margin-left: 2em;
+    background-color: white;
+    /* box-shadow: 0 0 4px black; */
+    max-width: 300px;
+}
+
+.actual-projects .card p {
+    color: #5B5B5B;
+}
+
+.actual-projects .card img {
+    top:50%;
+    left:50%;
+    width:300px;
+    height:300px;
+    object-fit:cover;
+}
+
+.progressbar-bg{position: relative;color:#000;background-color:#777777;margin: 1em;height: 8px;}
+.progressbar{color:#000;background-color:#fc6262;height: 8px;}
+.progressbar-sing1 {
+    position: absolute;
+    left: -10px; /* Позиция слева от прогрессбара */
+    top: -10px; /* Позиция сверху прогрессбара */
+    background-color: white; /* Цвет фона квадратика */
+    border: 2px solid #9993BF; /* Цвет границы квадратика */
+    padding: 2px 5px; /* Отступы внутри квадратика */
+    border-radius: 3px; /* Закругление углов */
+    white-space: nowrap; /* Запрет на перенос текста */
+}

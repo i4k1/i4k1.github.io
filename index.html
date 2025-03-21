@@ -3,11 +3,6 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
-    <meta name="author" content=""/>
-    <meta name="description" content=""/>
-    <meta name="keywords" content=""/>
-
-    <!-- <link rel="icon" type="image/x-icon" href="media/identicon.png"/> -->
     <link rel="stylesheet" href="style.css"/>
     <title>Пункт Милосердия</title>
     <script src="./script.js"></script>
@@ -19,10 +14,10 @@
             <div class="header">
                 <ul>
                     <li><a href=""><img src="media/logo.svg" alt=""></a></li>
-                    <li><a href="">Проекты</a></li>
-                    <li><a href="">Новости</a></li>
-                    <li><a href="">Партнёры</a></li>
-                    <li><a href="">Пожертвования</a></li>
+                    <li><a href="#projects">Проекты</a></li>
+                    <li><a href="#novosti">Новости</a></li>
+                    <li><a href="#partners">Партнёры</a></li>
+                    <li><a href="#price">Пожертвования</a></li>
                     <li><a class="support-button" href="">Поддержать проект</a></li>
                 </ul>
             </div>
@@ -52,12 +47,50 @@
             </div>
         </div>
     </div>
-
-
-    <nav>
-
-    </nav>
     <main>
+        <h1 id="projects" >Актуальные проекты</h1>
+        <p style="text-align: center;color: gray;">Текущие сборы средств</p>
+        <div class="actual-projects">
+            <div class="card">
+                <p><img src="media/marina.png" alt=""></p>
+                <p>У Марины редкое заболевание, и ей срочно нужна операция! Вместе мы можем подарить ей шанс на здоровую жизнь.</p>
+
+                <p style="float:right;">Собрано</p>
+                <p style="float:left;">Необходимо</p>
+                <div class="progressbar-bg">
+                    <div class="progressbar" style="width:15%"></div>
+                    <div class="progressbar-sing1">15%</div>
+                </div>
+                <p style="color:black;float:right;">3 000 000 ₽</p>
+                <p style="color:black;float:left;">450 000 ₽</p>
+            </div>
+            <div class="card">
+                <p><img src="media/maxim.png" alt=""></p>
+                <p>У Марины редкое заболевание, и ей срочно нужна операция! Вместе мы можем подарить ей шанс на здоровую жизнь.</p>
+
+                <p style="float:right;">Собрано</p>
+                <p style="float:left;">Необходимо</p>
+                <div class="progressbar-bg">
+                    <div class="progressbar" style="width:1%"></div>
+                    <div class="progressbar-sing1">1%</div>
+                </div>
+                <p style="color:black;float:right;">50 304 ₽</p>
+                <p style="color:black;float:left;">503,04 ₽</p>
+            </div>
+            <div class="card">
+                <p><img src="media/help_chidren.png" alt=""></p>
+                <p>На нашем благотворительном концерте мы собираем средства на покупку нового оборудования для детской площадки!</p>
+
+                <p style="float:right;">Собрано</p>
+                <p style="float:left;">Необходимо</p>
+                <div class="progressbar-bg">
+                    <div class="progressbar" style="width:45%"></div>
+                    <div class="progressbar-sing1">45%</div>
+                </div>
+                <p style="color:black;float:right;">90 556 ₽</p>
+                <p style="color:black;float:left;">40 750,2 ₽</p>
+            </div>
+        </div>
         <h2 id="novosti">Новости</h2>
         <div class="novosti">
             <div class="card-novosti">
@@ -73,7 +106,6 @@
                     <button>Читать подробно</button>
                 </div>
             </div>
-
             <div class="card-novosti" id="left1">
                 <img src="media/novosti2.svg" alt="">
                 <div class="text">
@@ -87,7 +119,6 @@
                     <button>Читать подробно</button>
                 </div>
             </div>
-
             <div class="card-novosti">
                 <img src="media/novosti3.svg" alt="">
                 <div class="text">
@@ -101,7 +132,6 @@
                     <button>Читать подробно</button>
                 </div>
             </div>
-
             <div class="card-novosti" id="left2">
                 <img src="media/novosti4.svg" alt="">
                 <div class="text">
@@ -113,8 +143,7 @@
                 </div>
             </div>
         </div>
-
-        <div class="partners">
+        <div class="partners" id="partners">
             <h2>Наши партнеры</h2>
             <div class="slider-wrapper">
                 <div class="sliderp top">
@@ -164,12 +193,10 @@
                 </div>
             </div>
         </div>
-
-        <div class="price">
+        <div class="price" id="price">
             <h3>Не оставайтесь равнодушными!</h3>
             <p>Каждая капля важна: Поддержите детей с ограниченными<br/>
                 возможностями и подарите им радость</p>
-
             <div class="card">
                 <div>
                     <img src="media/logoPrice.svg" alt="">
@@ -194,7 +221,6 @@
                 </div>
             </div>
         </div>
-
     </main>
     <footer>
         <div class="content">
@@ -202,7 +228,6 @@
                 <a href=""><img src="media/logo.svg" alt=""></a>
                 <p>© 2025 Kindercare, Inc.<br>All rights reserved.</p>
             </div>
-
             <div class="column">
                 <ul>
                     <li><a href=""><b>Главная</b></a></li>
@@ -211,7 +236,6 @@
                     <li><a href="">Пожертвовать</a></li>
                 </ul>
             </div>
-
             <div class="column">
                 <ul>
                     <p><b>Социальные Сети</b></p>
@@ -221,7 +245,6 @@
                     <li><a href="">YouTube</a></li>
                 </ul>
             </div>
-
             <div class="column">
                 <ul>
                     <p><b>Контактная информация</b></p>
