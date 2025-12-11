@@ -1,174 +1,570 @@
 <!doctype html>
 <html lang="ru">
-    <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
-        <meta name="color-scheme" content="light"/>
-        <link rel="stylesheet" href="style.css"/>
-        <title>ДеревьЯ</title>
-    </head>
-    <body>
-        <div class="header" id="header">
-            <div class="header-container">
-                <h1 class="h1-header">ДеревьЯ</h1>
-                <p>Покупай саженцы - сажай лес.<br>Лес, в который можно вернуться.</p>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+    <title>Luxury Hotels - Роскошь и комфорт</title>
+    <link rel="stylesheet" href="fonts/css/all.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+    function showPage(pageId) {
+        document.querySelectorAll('.page-container').forEach(page => {
+            page.classList.remove('active');
+        });
+
+        document.getElementById(pageId + '-page').classList.add('active');
+
+        document.querySelectorAll('nav a').forEach(link => {
+            link.classList.remove('active');
+        });
+
+        if (pageId === 'home') {
+            document.querySelector('nav ul li:first-child a').classList.add('active');
+        } else if (pageId === 'catalog') {
+            document.querySelector('nav ul li:nth-child(2) a').classList.add('active');
+        } else if (pageId === 'profile') {
+            document.querySelector('nav ul li:last-child a').classList.add('active');
+        }
+    }
+
+    function toggleAnswer(id) {
+        const answer = document.getElementById('answer' + id);
+        const icon = document.querySelector('#answer' + id).previousElementSibling.querySelector('i');
+
+        if (answer.classList.contains('active')) {
+            answer.classList.remove('active');
+            icon.classList.remove('fa-chevron-up');
+            icon.classList.add('fa-chevron-down');
+        } else {
+            document.querySelectorAll('.faq-answer.active').forEach(activeAnswer => {
+                activeAnswer.classList.remove('active');
+                activeAnswer.previousElementSibling.querySelector('i').classList.remove('fa-chevron-up');
+                activeAnswer.previousElementSibling.querySelector('i').classList.add('fa-chevron-down');
+            });
+
+            answer.classList.add('active');
+            icon.classList.remove('fa-chevron-down');
+            icon.classList.add('fa-chevron-up');
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        showPage('home');
+    });
+</script>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo" onclick="showPage('home'); return false;">
+                <i class="fas fa-hotel"></i>
+                Luxury<span>Hotels</span>
+            </a>
+
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="showPage('home'); return false;"><i class="fas fa-home"></i> Главная</a></li>
+                    <li><a href="#" onclick="showPage('catalog'); return false;"><i class="fas fa-bed"></i> Каталог номеров</a></li>
+                    <li><a href="#" onclick="showPage('profile'); return false;" class="active"><i class="fas fa-user"></i> Личный кабинет</a></li>
+                </ul>
+            </nav>
+
+            <div class="user-profile" onclick="showPage('profile');">
+                <i class="fas fa-user-circle"></i>
+                <span>Иван Петров</span>
             </div>
         </div>
-        <div class="nav" id="nav">
-            <p>Выбери город для посадки ↓</p>
-            <div class="nav-container">
-                <a href="" class="nav-button">Москва</a>
-                <a href="" class="nav-button">Санкт-Петербург</a>
-                <a href="" class="nav-button">Казань</a>
-                <a href="" class="nav-button">Самара</a>
-                <a href="" class="nav-button">Другой</a>
+    </header>
+
+    <main class="container">
+        <div id="home-page" class="page-container active">
+            <div class="gallery">
+                <!-- <img src="media/2.jpg" width="100%" height="480px"> -->
             </div>
-        </div>
-        <div class="main" id="main">
-            <p align="center">Как вы хотите участвовать? ↓</p>
-            <div class="main-container">
-                <div class="card">
-                    <h3><b>Посвящение в мужчины</b></h3>
-                    <img src="image/1.png" width="350px">
-                    <p>Отец и сын выходят на землю, берут в руки лопаты и сажают дерево. Не в теории, не в "когда-нибудь", а здесь и сейчас.</p>
-                    <p align="center"><a href="" class="nav-button">Оставить заявку</a></p>
-                </div>
-                <div class="card">
-                    <h3><b>Свадебное дерево</b></h3>
-                    <img src="image/2.png" width="350px">
-                    <p>Свадебное дерево: вместо очередного букета — корни в земле.</p>
-                    <p align="center"><a href="" class="nav-button">Оставить заявку</a></p>
-                </div>
-                <div class="card">
-                    <h3><b>Роща славы для участников СВО</b></h3>
-                    <img src="image/3.png" width="350px">
-                    <p>Мы создаём Рощу славы — живой мемориал, где дети с мамами сажают деревья в честь своих защитников.</p>
-                    <p align="center"><a href="" class="nav-button">Оставить заявку</a></p>
-                </div>
-            </div>
-            <h3 align="center">Корпоративное шефство над лесом</h3>
-            <p align="center" style="color:#B5961A;">Ваша компания может восстановить целый участок леса — от сотни до гектара</p>
-            <div class="main-container">
-                <div class="card">
-                    <h4 align="center"><b>1 гектар</b></h4>
-                    <p align="center">~2,500 деревьев</p>
-                    <hr>
-                    <p align="center" style="color:#B5961A;">2 500 000 ₽</p>
-                    <hr>
-                    <p><ul>
-                        <li>Фотоотчёт  посадки</li>
-                        <li>Упоминание на сайте</li>
-                        <li>Именная табличка на участке</li>
-                    </ul></p>
-                    <p align="center"><a href="" class="nav-button">Оставить заявку</a></p>
-                </div>
-                <div class="card">
-                    <h4 align="center"><b>10 гектар</b></h4>
-                    <p align="center">~25,000 деревьев</p>
-                    <hr>
-                    <p align="center" style="color:#B5961A;">25 000 000 ₽</p>
-                    <hr>
-                    <p><ul>
-                        <li>Всё из предыдущего уровня</li>
-                        <li>Видеорепортаж о посадке</li>
-                        <li>Выезд сотрудников на место</li>
-                    </ul></p>
-                    <p align="center"><a href="" class="nav-button">Оставить заявку</a></p>
-                </div>
-                <div class="card">
-                    <h4 align="center"><b>100 гектар</b></h4>
-                    <p align="center">~250,000 деревьев</p>
-                    <hr>
-                    <p align="center" style="color:#B5961A;">250 000 000 ₽</p>
-                    <hr>
-                    <p><ul>
-                        <li>Всё из предыдущего уровня</li>
-                        <li>Именной лес компании</li>
-                        <li>Индивидуальная программа</li>
-                    </ul></p>
-                    <p align="center"><a href="" class="nav-button">Оставить заявку</a></p>
+            <div class="search-box">
+                <h2>Найдите идеальное место для отдыха</h2>
+                <div class="search-form">
+                    <select>
+                        <option>Выберите город</option>
+                        <option>Москва</option>
+                        <option>Санкт-Петербург</option>
+                        <option>Сочи</option>
+                    </select>
+                    <select>
+                        <option>Все отели</option>
+                        <option>Luxury Hotel Москва</option>
+                        <option>Luxury Hotel Санкт-Петербург</option>
+                        <option>Luxury Hotel Сочи</option>
+                    </select>
+                    <input type="date">
+                    <input type="date">
+                    <select>
+                        <option>Любой</option>
+                        <option>Стандартный номер</option>
+                        <option>Улучшенный номер</option>
+                        <option>Люкс</option>
+                        <option>Семейный номер</option>
+                    </select>
                 </div>
             </div>
-            <h3 align="center">Посмотрите, как это было</h3>
-            <p align="center" style="color:#B5961A;">Реальные истории посадок — от небольших семейных выездов до масштабных корпоративных проектов</p>
-            <div class="main-container">
-                <div class="card">
-                    <p align="center"><img src="image/preview.png"></p>
-                    <h3 align="center">Посадка леса с “Фондом Тольятти</h3>
-                    <p>Тольятти<br>Октябрь 2021</p>
-                    <hr>
-                    <p>23,000 сосен</p>
+
+            <div class="hero-section">
+                <h1 class="hero-title">Роскошь и комфорт в каждой детали</h1>
+                <p class="hero-description">
+                    Сеть отелей Luxury Hotels предлагает безупречный сервис и современный комфорт в лучших локациях.
+                    Мы создаем незабываемые моменты для наших гостей, сочетая изысканный дизайн, высокое качество обслуживания и внимание к деталям.
+                </p>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Отелей по всему миру</div>
+                    <div class="stat-description">В самых престижных локациях</div>
                 </div>
-                <div class="card">
-                    <p align="center"><img src="image/preview.png"></p>
-                    <h3 align="center">Восстановление соснового бора под Казанью</h3>
-                    <p>Казань<br>Сентябрь 2025</p>
-                    <hr>
-                    <p>2,8 тыс. гектаров</p>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Довольные гости</div>
+                    <div class="stat-description">Высокая оценка качества сервиса</div>
                 </div>
-                <div class="card">
-                    <p align="center"><img src="image/preview.png"></p>
-                    <h3 align="center">Высадка лесов по национальному проекту "Экологическое благополучие"</h3>
-                    <p>Самара<br>Август 2025</p>
-                    <hr>
-                    <p>520 гектаров</p>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Поддержка гостей</div>
+                    <div class="stat-description">Круглосуточное обслуживание</div>
                 </div>
             </div>
-            <h3 align="center">Как это работает</h3>
-            <p align="center" style="color:#B5961A;">Четыре простых шага от идеи до вашего личного леса</p>
-            <div class="main-container">
-                <div class="card">
-                    <h1 class="card-num">1</h1>
-                    <h3>Выберите формат</h3>
-                    <p>Определитесь, как хотите участвовать: лично приехать на посадку, организовать корпоративный выезд или стать шефом участка дистанционно.</p>
+
+            <h2>Наши услуги</h2>
+            <p>Мы предлагаем широкий спектр услуг для вашего комфорта и удовольствия.</p>
+
+            <div class="services">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3 class="service-title">Быстрый Wi-Fi</h3>
+                    <p class="service-description">Высокоскоростной интернет во всех номерах и общественных зонах</p>
                 </div>
-                <div class="card">
-                    <h1 class="card-num">2</h1>
-                    <h3>Оставьте заявку</h3>
-                    <p>Заполните простую форму — мы свяжемся с вами в течение дня, подберём удобную дату и ответим на все вопросы.</p>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3 class="service-title">SPA & Wellness</h3>
+                    <p class="service-description">Расслабляющие процедуры, сауны, массажные кабинеты</p>
                 </div>
-                <div class="card">
-                    <h1 class="card-num">3</h1>
-                    <h3>Приезжайте на посадку</h3>
-                    <p>Мы всё организуем: выдадим инвентарь, покажем технику посадки, обеспечим безопасность. Вам нужно только приехать.</p>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="service-title">Ресторан</h3>
+                    <p class="service-description">Изысканная кухня от шеф-повара, завтрак включен</p>
                 </div>
-                <div class="card">
-                    <h1 class="card-num">4</h1>
-                    <h3>Следите за ростом</h3>
-                    <p>Получайте фото- и видеоотчёты, узнавайте о состоянии вашего участка. Приезжайте в любое время, чтобы увидеть результат.</p>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-parking"></i>
+                    </div>
+                    <h3 class="service-title">Парковка</h3>
+                    <p class="service-description">Подземная охраняемая парковка для гостей отеля</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3 class="service-title">Фитнес-центр</h3>
+                    <p class="service-description">Современный тренажерный зал с профессиональным оборудованием</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cocktail"></i>
+                    </div>
+                    <h3 class="service-title">Бар и лаунж</h3>
+                    <p class="service-description">Уютная атмосфера, широкий выбор напитков и закусок</p>
                 </div>
             </div>
-        </div>
-        <div class="footer" id="footer">
-            <div class="footer-container">
-                <div class="footer-left">
-                    <h4>Свяжитесь с нами</h4>
-                    <p style="color:#B7B7B7;">Ответим на все вопросы и поможем выбрать формат участия</p>
-                    <p>Телефон:</p>
-                    <p>Почта:</p>
-                    <p>Адрес:</p>
+
+            <div class="faq">
+                <h2>Часто задаваемые вопросы</h2>
+                <p>Ответы на популярные вопросы наших гостей</p>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(1)">
+                        <span>Во сколько можно заселиться и выселиться?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer" id="answer1">
+                        <p>Стандартное время заселения - с 14:00, выселение - до 12:00. Ранний заезд и поздний выезд возможны по запросу и доступности номеров.</p>
+                    </div>
                 </div>
-                <div class="footer-right">
-                    <div class="footer-request">
-                        <h4>Оставьте заявку</h4>
-                        <p>И мы свяжемся в течении дня</p>
-                        <p><input type="text" placeholder="Ваше имя" size="48"></p>
-                        <p><input type="text" placeholder="Телефон" size="48"></p>
-                        <p><input type="text" placeholder="Почта" size="48"></p>
-                        <p><textarea rows="4" placeholder="Расскажите о вашех планах" cols="48"></textarea></p>
-                        <p align="center"><a href="" class="nav-button" style="border: 2px solid #2B472A; background: #537050;">Отправить заявку</a></p>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(2)">
+                        <span>Какие способы оплаты вы принимаете?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer" id="answer2">
+                        <p>Мы принимаем наличные, банковские карты (Visa, MasterCard, МИР), а также безналичную оплату для юридических лиц.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(3)">
+                        <span>Можно ли отменить или изменить бронирование?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer" id="answer3">
+                        <p>Да, бронирование можно отменить или изменить бесплатно не позднее чем за 24 часа до даты заезда. При более поздней отмене взимается плата за первую ночь.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(4)">
+                        <span>Разрешено ли размещение с домашними животными?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer" id="answer4">
+                        <p>Да, мы рады принять ваших питомцев. Размещение небольших животных весом до 5 кг бесплатно, для крупных животных взимается дополнительная плата 1500 руб/сутки.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(5)">
+                        <span>Есть ли трансфер от/до аэропорта?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer" id="answer5">
+                        <p>Да, мы предоставляем услугу трансфера. Стоимость зависит от расстояния и класса автомобиля. Заказать трансфер можно при бронировании или связавшись с консьержем.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(6)">
+                        <span>Входит ли завтрак в стоимость номера?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer" id="answer6">
+                        <p>Завтрак включен в стоимость большинства номеров. Подается в формате шведского стола с 7:00 до 11:00 в ресторане отеля.</p>
                     </div>
                 </div>
             </div>
-            <hr>
-            <div class="footer-container">
-                <div class="footer-left">
-                    <p>(C) 2025 ДеревьЯ ООО. Все права защищены</p>
+        </div>
+
+        <div id="catalog-page" class="page-container">
+            <h1>Каталог номеров</h1>
+            <p>Выберите идеальный номер для вашего пребывания.</p>
+
+            <div class="room-catalog">
+                <div class="room-card">
+                    <div class="room-image-2">
+                    </div>
+                    <div class="room-content">
+                        <h3 class="room-title">Стандартный номер</h3>
+                        <p class="room-description">Уютный современный номер с одной двуспальной кроватью, рабочей зоной и собственной ванной комнатой.</p>
+                        <div class="room-features">
+                            <ul>
+                                <li>Кондиционер</li>
+                                <li>Телевизор</li>
+                                <li>Сейф</li>
+                            </ul>
+                        </div>
+                        <div class="room-price">
+                            <div class="price">от 5 000 ₽</div>
+                            <button class="btn btn-secondary">Забронировать</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="footer-right">
-                    <p>Политика конфиденциальности</p>
+
+                <div class="room-card">
+                    <div class="room-image-1">
+                    </div>
+                    <div class="room-content">
+                        <h3 class="room-title">Улучшенный номер</h3>
+                        <p class="room-description">Просторный номер с улучшенной меблировкой, зоной отдыха и видом на город.</p>
+                        <div class="room-features">
+                            <ul>
+                                <li>Кондиционер</li>
+                                <li>Smart TV</li>
+                                <li>Сейф</li>
+                                <li>Мини-бар</li>
+                            </ul>
+                        </div>
+                        <div class="room-price">
+                            <div class="price">от 8 000 ₽</div>
+                            <button class="btn btn-secondary">Забронировать</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-card">
+                    <div class="room-image-1">
+                    </div>
+                    <div class="room-content">
+                        <h3 class="room-title">Люкс</h3>
+                        <p class="room-description">Элегантный люкс с отдельной спальней и гостиной зоной, панорамными окнами и роскошной ванной.</p>
+                        <div class="room-features">
+                            <ul>
+                                <li>Кондиционер</li>
+                                <li>Smart TV</li>
+                                <li>Сейф</li>
+                                <li>Гидромассажная ванна</li>
+                            </ul>
+                        </div>
+                        <div class="room-price">
+                            <div class="price">от 15 000 ₽</div>
+                            <button class="btn btn-secondary">Забронировать</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-card">
+                    <div class="room-image-2">
+                    </div>
+                    <div class="room-content">
+                        <h3 class="room-title">Семейный номер</h3>
+                        <p class="room-description">Просторный номер для семейного отдыха с двумя спальнями и дополнительными спальными местами.</p>
+                        <div class="room-features">
+                            <ul>
+                                <li>Кондиционер</li>
+                                <li>Телевизор</li>
+                                <li>Сейф</li>
+                                <li>Детская кроватка</li>
+                            </ul>
+                        </div>
+                        <div class="room-price">
+                            <div class="price">от 12 000 ₽</div>
+                            <button class="btn btn-secondary">Забронировать</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-card">
+                    <div class="room-image-1">
+                    </div>
+                    <div class="room-content">
+                        <h3 class="room-title">Президентский люкс</h3>
+                        <p class="room-description">Эксклюзивный номер высшей категории с отдельными спальней, гостиной и кабинетом, премиальной мебелью и панорамными видами.</p>
+                        <div class="room-features">
+                            <ul>
+                                <li>Кондиционер</li>
+                                <li>Smart TV</li>
+                                <li>Сейф</li>
+                                <li>Персональный дворецкий</li>
+                            </ul>
+                        </div>
+                        <div class="room-price">
+                            <div class="price">от 30 000 ₽</div>
+                            <button class="btn btn-secondary">Забронировать</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-card">
+                    <div class="room-image-2">
+                    </div>
+                    <div class="room-content">
+                        <h3 class="room-title">Бизнес-номер</h3>
+                        <p class="room-description">Комфортный номер для деловых поездок с большим рабочим столом, эргономичным креслом и быстрым интернетом.</p>
+                        <div class="room-features">
+                            <ul>
+                                <li>Кондиционер</li>
+                                <li>Smart TV</li>
+                                <li>Сейф</li>
+                                <li>Принтер/сканер</li>
+                            </ul>
+                        </div>
+                        <div class="room-price">
+                            <div class="price">от 10 000 ₽</div>
+                            <button class="btn btn-secondary">Забронировать</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </body>
+
+        <div id="profile-page" class="page-container">
+            <h1>Личный кабинет</h1>
+            <p>Управляйте своим профилем и бронированием</p>
+
+            <div class="profile-container">
+                <div class="profile-sidebar">
+                    <div class="user-info">
+                        <div class="user-avatar">ИП</div>
+                        <div class="user-details">
+                            <h3>Иван Петров</h3>
+                            <p>Клиент с 2023 года</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Имя</label>
+                        <input type="text" value="Иван" placeholder="Имя">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Фамилия</label>
+                        <input type="text" value="Петров" placeholder="Фамилия">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" value="ivan.petrov@example.com" placeholder="Email">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Телефон</label>
+                        <input type="tel" value="7 (999) 123-45-67" placeholder="Телефон">
+                    </div>
+
+                    <button class="btn" style="width: 100%;">Сохранить изменения</button>
+                </div>
+
+                <div class="profile-content">
+                    <h2>История бронирований</h2>
+
+                    <div class="booking-card">
+                        <div class="booking-header">
+                            <div class="booking-title">Luxury Hotel Москва</div>
+                            <div class="booking-status status-upcoming">Предстоящее</div>
+                        </div>
+
+                        <div class="booking-details">
+                            <div class="detail-item">
+                                <div class="detail-label">Тип номера</div>
+                                <div class="detail-value">Люкс</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Даты проживания</div>
+                                <div class="detail-value">8 июля 2024 - 12 июля 2024</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Гостей</div>
+                                <div class="detail-value">2 гостя</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Стоимость</div>
+                                <div class="detail-value"><input class="booking-form" type="number" value="75000" placeholder="Стоимость"> ₽</div>
+                            </div>
+                        </div>
+
+                        <div class="booking-footer">
+                            <div class="booking-date">Выезд: 12.07.2024</div>
+                            <button class="btn btn-secondary">Изменить бронирование</button>
+                        </div>
+                    </div>
+
+                    <div class="booking-card">
+                        <div class="booking-header">
+                            <div class="booking-title">Luxury Hotel Санкт-Петербург</div>
+                            <div class="booking-status status-completed">Завершено</div>
+                        </div>
+
+                        <div class="booking-details">
+                            <div class="detail-item">
+                                <div class="detail-label">Тип номера</div>
+                                <div class="detail-value">Стандартный номер</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Даты проживания</div>
+                                <div class="detail-value">15 ноября 2023 - 18 ноября 2023</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Гостей</div>
+                                <div class="detail-value">1 гость</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Стоимость</div>
+                                <div class="detail-value"><input class="booking-form" type="number" value="16500" placeholder="Стоимость"> ₽</div>
+                            </div>
+                        </div>
+
+                        <div class="booking-footer">
+                            <div class="booking-date">Заезд: 15.11.2023 • Выезд: 18.11.2023</div>
+                            <button class="btn">Оставить отзыв</button>
+                        </div>
+                    </div>
+
+                    <div class="booking-card">
+                        <div class="booking-header">
+                            <div class="booking-title">Luxury Hotel Сочи</div>
+                            <div class="booking-status status-completed">Завершено</div>
+                        </div>
+
+                        <div class="booking-details">
+                            <div class="detail-item">
+                                <div class="detail-label">Тип номера</div>
+                                <div class="detail-value">Семейный номер</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Даты проживания</div>
+                                <div class="detail-value">10 августа 2023 - 20 августа 2023</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Гостей</div>
+                                <div class="detail-value">4 гостя</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Стоимость</div>
+                                <div class="detail-value"><input class="booking-form" type="number" value="120000" placeholder="Стоимость"> ₽</div>
+                            </div>
+                        </div>
+
+                        <div class="booking-footer">
+                            <div class="booking-date">Заезд: 10.08.2023 • Выезд: 20.08.2023</div>
+                            <button class="btn">Оставить отзыв</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Luxury Hotels</h3>
+                    <p>Сеть отелей премиум класса с безупречным сервисом и современным комфортом.</p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +7 (999) 123-45-67</li>
+                        <li><i class="fas fa-phone"></i> +7 (800) 555-35-35 (бесплатная линия)</li>
+                        <li><i class="fas fa-envelope"></i> info@luxuryhotels.ru</li>
+                        <li><i class="fas fa-envelope"></i> booking@luxuryhotels.ru</li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Адрес</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> г. Москва, Тверская улица, д. 15</li>
+                        <li>101000, Россия</li>
+                        <li><i class="fas fa-clock"></i> Круглосуточно, 24/7</li>
+                        <li>Стойка регистрации всегда открыта</li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Информация</h3>
+                    <ul>
+                        <li><a href="#">О компании</a></li>
+                        <li><a href="#">Условия бронирования</a></li>
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                        <li><a href="#">Программа лояльности</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2023 Luxury Hotels. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+</body>
 </html>
